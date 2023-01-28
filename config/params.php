@@ -1,5 +1,4 @@
 <?php
-$sendDomain = '';
 return [
     'localDomain'  => 'http://localhost/web/',
     'company_name' =>  "",
@@ -7,7 +6,7 @@ return [
     'company_login'=>  "",
     'email_footer' =>  "",
     'links'        =>  "",
-    's3_bucket'    => 'pentajeucms-bucket',
+    's3_bucket'    => '',
     'denyDomains' => [
         'yopmail.com',
         'bccto.me',

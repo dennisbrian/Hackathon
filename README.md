@@ -59,6 +59,11 @@ return [
 **NOTES:**
 - Check and edit the other files in the `config/` directory to customize your application as required.
 
+** Configure "param.php"
+```
+[Line 10] "s3_bucket" : Update to s3 bucket
+```
+
 ** Configure "web.php" & "console.php" **
 
 1) - Find the "setAlias", update the string to the AWS S3 bucket path to follow white label keyword
