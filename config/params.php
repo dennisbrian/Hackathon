@@ -1,7 +1,7 @@
 <?php
 $sendDomain = '';
 return [
-    'localDomain'  => 'http://localhost/defi/web/',
+    'localDomain'  => 'http://localhost/web/',
     'company_name' =>  "",
     'company_logo' =>  "",
     'company_login'=>  "",
