@@ -1,3 +1,6 @@
+INSTALLATION GUIDE
+------------------
+This installation guide is for setup the web applications
 
 DIRECTORY STRUCTURE
 -------------------
@@ -61,10 +64,16 @@ return [
 1) - Find the "setAlias", update the string to the AWS S3 bucket path to follow white label keyword
 
 2) - Update important parameter
+```
 "name" : Current white label company name
+```
+```
 "aws" : Setup the key, secret and the bucket name
+```
 "timezone" : Update if necessary on project basis
+```
 [Line 3] "project" : Update to project name
+```
 
 3) ** Check folder permission **
 
@@ -95,10 +104,8 @@ init_user_role (for user role purposes)
     php yii rbac
 ```
 
-
-
 7. Start web server:
 
-    ```
+```
     php yii serve
-    ```
+```

@@ -9,7 +9,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
-    'name'=> 'Taow',
+    'name'=> '',
     'timeZone' => 'UTC',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -36,6 +36,7 @@ $config = [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser'
             ],
+            //For Preventing the IP host whitelisting for cloudflare services
             'trustedHosts' => [
                 '127.0.0.1',
                 '103.21.244.0/22',
