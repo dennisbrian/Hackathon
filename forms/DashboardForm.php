@@ -5,6 +5,7 @@ namespace app\forms;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yii\data\ArrayDataProvider;
 use app\models\Movies;
 use app\models\User;
 
@@ -53,6 +54,23 @@ class DashboardForm extends Model
 		]);
 
 		return $dataProvider;
+	}
+
+	public function getInfo()
+	{
+		$data = [];
+		$query = Movies::find();
+		$query->orderBy(['genre' => SORT_ASC]);
+		$query->andWhere(['is_delete' => 0]);
+		foreach($query->each() as $m => $info){
+			$data[$m]['id'] = $info['id'];
+			$data[$m]['movie_name'] = $info['movie_name'];
+			$data[$m]['cover'] = $info['cover'];
+			$data[$m]['path'] = $info['path'];
+			$data[$m]['is_vip'] = $info['is_vip'];
+		}
+
+		return $data;
 	}
 
 	public function getContent($id)

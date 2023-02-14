@@ -212,4 +212,16 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionViewContent($id)
+    {
+        $model = new DashboardForm;
+        $model->getContent($id);
+        $model->load(Yii::$app->request->get());
+        $user      = Yii::$app->user->identity;
+
+        return $this->render('view_content', [
+            'model'                 => $model,
+        ]);
+    }
 }
