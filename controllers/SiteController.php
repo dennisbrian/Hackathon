@@ -115,8 +115,10 @@ class SiteController extends Controller
                 $model->login();
                 $user      = Yii::$app->user->identity;
                 $db->commit();
-                if($user->role == 'user'){
-                    return $this->redirect(['index']);
+                if(!empty($user)){
+                    if($user->role == 'user'){
+                        return $this->redirect(['index']);
+                    }
                 }
                 return $this->redirect(['admin/dashboard']);
             }

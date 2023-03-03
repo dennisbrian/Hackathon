@@ -212,7 +212,7 @@ $this->registerCss(
 			],
 		]); ?>
 	</div>
-	<div class="row">
+	<div class="row col-md-12">
 		<?php 
 		foreach($model->getInfo() as $data => $info) 
 		{

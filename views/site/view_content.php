@@ -6,6 +6,7 @@ use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
+use app\models\User;
 
 $this->registerJs('
 	function actionAdjustment() {
@@ -21,6 +22,54 @@ $this->registerJs('
 	}
 	init();
 ');
+
+$this->registerCss(
+	"
+	.a-box {
+	  width: 100%;
+	  border: 3px dotted;
+	  border-color:#ffac81;
+	  border-radius: 10px;
+	  padding:5px 10px 5px 10px;
+	  background-color:#f6e8ea;
+	}
+
+	.a-box h3 {
+	    font-size:22px;
+	}
+
+	.a-box img {display:inline;
+	padding:0 8px 0 0;}
+
+	p.td-text {font-size:10px;
+	  
+	}
+
+	.carousel {
+		width:500px;
+		height: 250px;
+		margin-bottom: 30px;
+	}
+
+	* {
+	box-sizing: border-box;
+	}
+
+	.column {
+		float: left;
+		width: 33.33%;
+		padding: 5px;
+	}
+
+	.row::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+ "
+);
+
 ?>
 
 <div id="adjustment" class="modal fade">
@@ -71,6 +120,36 @@ $this->registerJs('
 	</div>
 	<!-- /.card-body -->
 	<div class="card-footer">
+		<div class="row col-md-12">
+			<div class="col-md-12">Suggestion</div>
+			<br>
+			<?php 
+			foreach($model->getInfo() as $data => $info) 
+			{
+				$movie_cover_path = $info['cover'];
+				$movie_name = ucwords($info['movie_name']);
+
+				$user = User::findOne(['id' => Yii::$app->user->id]);
+				if($info['is_vip'] == 0){
+					if(Yii::$app->user->isGuest){
+						$path =  'site/view-content?id='.$info['id'];
+					}
+				}elseif(!empty($user)){
+					if($user->is_vip == 1){
+						$path =  'site/view-content?id='.$info['id'];
+					}
+				}else{
+					$path = $info['path'];
+				}
+				echo "<div class = 'column' >";
+				echo "<a href=".$path.">
+				<img src=\"$movie_cover_path\" alt=\"$movie_name\" width=\"100%\">
+				</a>";
+				echo "</div>";
+			}
+			?>
+		</div>
+
 	</div>
 	<!-- /.card-footer -->
 </div>
