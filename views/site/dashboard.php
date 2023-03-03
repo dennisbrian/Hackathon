@@ -129,6 +129,7 @@ $this->registerCss(
   	<?php 
 	   	foreach($model->getInfo() as $data => $info) 
 	  	{
+	  		$path = '';
 	  		$movie_cover_path = $info['cover'];
 	  		$movie_name = ucwords($info['movie_name']);
 
