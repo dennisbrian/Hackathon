@@ -44,6 +44,8 @@ CONFIGURATION
 
 ### Database
 
+(Example DB can be found on data/sample_db_test.sql)
+
 Edit the file `config/db.php` with real data, for example:
 
 ```php
