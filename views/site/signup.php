@@ -15,7 +15,7 @@ $this->title = Yii::t('app', 'Signup');
         <div class="card card-outline card-primary">
             <div class = "card-header text-center">
                 <?= $this->render('/admin/_alert_flash', []) ?>
-                <p class="login-box-msg"><?= Yii::t('app','Sign up to start your session') ?></p>
+                <p class="login-box-msg"><?= Yii::t('app','Create Your Account') ?></p>
             </div>
 
             <div class="card-body login-card-body">
