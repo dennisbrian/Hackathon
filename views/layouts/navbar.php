@@ -13,6 +13,13 @@ use yii\helpers\Html;
         <?php if (Yii::$app->user->isGuest): ?>
             <li class="nav-item d-none d-sm-inline-block">
                 <?=
+                    Html::a(Yii::t('app', 'Login'), ['site/login'], [
+                    'class' => 'nav-link',
+                    ]);
+                ?>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <?=
                     Html::a(Yii::t('app', 'Signup'), ['site/register'], [
                     'class' => 'nav-link',
                     ]);

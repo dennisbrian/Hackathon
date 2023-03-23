@@ -4,9 +4,9 @@ $this->title = Yii::t('app', 'Dashboard');
 use yii\grid\GridView;
 use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
+use yii\bootstrap4\Carousel;
 use yii\helpers\Url;
 use app\models\User;
-use yii\bootstrap\Carousel;
 
 $this->registerJs('
 	function actionAdjustment() {
@@ -221,17 +221,17 @@ $this->registerCss(
 			$movie_name = ucwords($info['movie_name']);
 
 			$user = User::findOne(['id' => Yii::$app->user->id]);
-	  		if($info['is_vip'] == 0){
-	  			if(Yii::$app->user->isGuest){
-	  				 $path =  'site/view-content?id='.$info['id'];
-	  			}
-	  		}elseif(!empty($user)){
-	  			if($user->is_vip == 1){
-	  				$path =  'site/view-content?id='.$info['id'];
-	  			}
-	  		}else{
-	  			$path = $info['path'];
-	  		}
+			if($info['is_vip'] == 0){
+				if(Yii::$app->user->isGuest){
+					 $path ='site/view-content?id='.$info['id'];
+				}
+			}elseif(!empty($user)){
+				if($user->is_vip == 1){
+					$path ='site/view-content?id='.$info['id'];
+				}
+			}else{
+				$path = $info['path'];
+			}
 			echo "<div class = 'column' >";
 			echo "<a href=".$path.">
 			<img src=\"$movie_cover_path\" alt=\"$movie_name\" width=\"100%\">

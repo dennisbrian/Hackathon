@@ -6,7 +6,7 @@ use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
 use yii\helpers\Url;
 use app\models\User;
-use yii\bootstrap\Carousel;
+use yii\bootstrap4\Carousel;
 
 $this->registerCss(
 	"
@@ -91,9 +91,9 @@ $this->registerCss(
 							'class'=>'carousel slide'
 						]
 					],
-			]
-		]); ?>
-  </div>
+				]
+			]); ?>
+  	</div>
   <?php $form = ActiveForm::begin([
   	'method'      => 'get',
   	'fieldConfig' => [
@@ -126,8 +126,8 @@ $this->registerCss(
   <?php ActiveForm::end(); ?>
 
   <div class="row">
-  	<?php 
-	   	foreach($model->getInfo() as $data => $info) 
+  	<?php
+	   	foreach($model->getInfo() as $data => $info)
 	  	{
 	  		$path = '';
 	  		$movie_cover_path = $info['cover'];
@@ -214,7 +214,7 @@ $this->registerCss(
 						'template' => '
 						{view}
 						',
-						'buttons'  => [		
+						'buttons'  => [
 							'view' => function ($url, $model) {
 								$web = $model->path;
 								if(!empty($web)){
@@ -237,7 +237,7 @@ $this->registerCss(
 
 								}
 							},
-							
+
 						],
 					],
 				],

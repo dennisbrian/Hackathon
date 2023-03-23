@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap4\ActiveForm;
 $this->title = Yii::t('app', 'Login');
 ?>
@@ -46,6 +47,7 @@ $this->title = Yii::t('app', 'Login');
                             'value' => 1,
                         ]
                         ) ?>
+                        <a href="<?=\yii\helpers\Url::home()?>" class="btn btn-primary btn-block">Back</a>
                     </div>
                 </div>
                 <?php ActiveForm::end(); ?>
