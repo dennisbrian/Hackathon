@@ -46,6 +46,7 @@ $this->title = Yii::t('app', 'Signup');
                             'value' => 1,
                         ]
                         ) ?>
+                        <a href="<?=\yii\helpers\Url::home()?>" class="btn btn-primary btn-block">Back</a>
                     </div>
                 </div>
                 <?php ActiveForm::end(); ?>
